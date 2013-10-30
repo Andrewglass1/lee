@@ -11,6 +11,7 @@
 	#right-links {display: inline-block; float: right;}
 	.nav-link {margin-right: 50px; padding: 5px 10px; vertical-align: top;
 		&.current { background-color: yellow;}
+		&.last {margin-right: 0;}
 	}
 	#shop-icon { width: 32px;}
 }
