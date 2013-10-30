@@ -1,0 +1,31 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#container {width: 1040px; margin: 50px auto 0 auto; }
+
+#nav-bar { border-bottom: 2px solid black; margin-bottom: 35px;
+	#name {font-size: 15px; font-family: arial, sans-serif; margin: 0 0 22px 0;}
+	#left-links {display: inline-block;}
+	#right-links {display: inline-block; float: right;}
+	.nav-link {margin-right: 50px; padding: 5px 10px; vertical-align: top;
+		&.current { background-color: yellow;}
+	}
+	#shop-icon { width: 32px;}
+}
+
+#left  { width: 320px; float: left; margin-right: 40px;}
+#middle {width: 320px; float: left; margin-right: 40px;}
+#right {width: 320px; float: left;}
+
+
+#left-third{}
+#right-two-thirds{}
+
+p, span, a { color: black; text-decoration: none; font-size: 15px; line-height: 19px; font-family: arial, sans-serif;}
+
+.content-div { display: none; &.active {display: inline;}}
+
+//information
+.title {border-bottom: 2px solid black; margin: 15px 0; display: inline-block;}

@@ -1,0 +1,5 @@
+if !$(this).hasClass("current")
+	$('.current').removeClass("current")
+	$(this).addClass("current")
+	$('.active').removeClass('active')
+	$('#' + $(this).attr('name')).addClass('active')
