@@ -1,0 +1,13 @@
+<div id="nav-bar">
+	<div id="left-links">
+		<p id="name">Leigh Mignogna</p>
+	</div>
+	<div id="right-links">
+		<%= link_to "Information", "#", :class => "nav-link current", :name => "information" %>
+		<%= link_to "Projects", "#", :class => "nav-link", :name => "projects" %>
+		<%= link_to "Teaching", "#", :class => "nav-link", :name => "teaching" %>
+		<%= link_to "#", :class => "nav-link last", :id=> "shop-link", :name => "store" do %>
+			<img id="shop-icon" src="https://s3.amazonaws.com/leemigs/shop.jpg" onmouseover="this.src='https://s3.amazonaws.com/leemigs/shop_g.jpg'" onmouseout="this.src='https://s3.amazonaws.com/leemigs/shop.jpg'" />
+  	<% end %>
+	</div>
+</div>

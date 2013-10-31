@@ -2,18 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face { font-family: leigh; src: url('https://s3.amazonaws.com/leemigs/leigh_font.otf'); }
+@font-face { font-family: leigh; font-weight: bold; src: url('https://s3.amazonaws.com/leemigs/leigh_font.otf'); }
 
 #container {width: 1040px; margin: 50px auto 0 auto; }
 
 #nav-bar { border-bottom: 2px solid black; margin-bottom: 35px;
-	#name {font-size: 15px; font-family: arial, sans-serif; margin: 0 0 22px 0;}
+	#name {font-size: 15px; font-family: leigh; margin: 0 0 22px 0;}
 	#left-links {display: inline-block;}
-	#right-links {display: inline-block; float: right;}
+	#right-links {display: inline-block; float: right; position: relative;}
 	.nav-link {margin-right: 50px; padding: 5px 10px; vertical-align: top;
 		&.current { background-color: yellow;}
 		&.last {margin-right: 0;}
 	}
-	#shop-icon { width: 32px;}
+	#shop-link { background-color: transparent;}
+	#shop-icon { width: 32px; padding: 0; position: absolute; right: 0; bottom: 10px;}
 }
 
 #left  { width: 320px; float: left; margin-right: 40px;}
@@ -24,9 +27,16 @@
 #left-third{}
 #right-two-thirds{}
 
-p, span, a { color: black; text-decoration: none; font-size: 15px; line-height: 19px; font-family: arial, sans-serif;}
+#centered {width: 100%;}
+
+p, span, a { color: black; text-decoration: none; font-size: 15px; line-height: 19px; font-family: leigh;}
 
 .content-div { display: none; &.active {display: inline;}}
 
 //information
 .title {border-bottom: 2px solid black; margin: 15px 0; display: inline-block;}
+
+
+//projects
+
+#coming-soon {margin: auto; display: block;}
