@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@font-face { font-family: leigh; src: url('https://s3.amazonaws.com/leemigs/leigh_font.otf'); }
+@font-face { font-family: leigh;
+						 src: url('https://s3.amazonaws.com/leemigs/leigh_font.otf');
+						 src: url("https://s3.amazonaws.com/leemigs/leigh_font.fon") format("fon");
+						 src: url("https://s3.amazonaws.com/leemigs/leigh_font.ttf") format("truetype") }
 
 #container {width: 1040px; margin: 50px auto 0 auto; }
 
