@@ -2,13 +2,28 @@
 <html>
 <head>
   <title>Leigh Ann Mignogna</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container">
+	<div id="nav-bar">
+		<div id="left-links">
+			<p id="name">Leigh Mignogna</p>
+		</div>
+		<div id="right-links">
+			<%= link_to "Information", info_index_path, :class => "nav-link#{add_current_class('info')}", :name => "information" %>
+			<%= link_to "Projects", projects_path, :class => "nav-link#{add_current_class('projects')}", :name => "projects" %>
+			<%= link_to "Teaching", teaching_index_path, :class => "nav-link#{add_current_class('teaching')}", :name => "teaching" %>
+			<%= link_to shop_index_path, :class => "nav-link last#{add_current_class('shop')}", :id=> "shop-link", :name => "store" do %>
+				<img id="shop-icon" src="https://s3.amazonaws.com/leemigs/shop.jpg" onmouseover="this.src='https://s3.amazonaws.com/leemigs/shop_g.jpg'" onmouseout="this.src='https://s3.amazonaws.com/leemigs/shop.jpg'" />
+	  	<% end %>
+		</div>
+	</div>
 
 <%= yield %>
+</div>
 
 </body>
 </html>
