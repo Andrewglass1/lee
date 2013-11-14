@@ -1,0 +1,10 @@
+<div id="project-show">
+	<div id="left-third">
+		<p><span class="title"><%= @project.name %></span></p>
+		<%= @project.description.html_safe %>
+	</div>
+	<div id="right-two-thirds">
+		<%= image_tag @project.image_1, :class => "project-image" %>
+		<%= image_tag @project.image_2, :class => "project-image" %>
+	</div>
+</div>
