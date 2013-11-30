@@ -4,7 +4,9 @@
 		<%= @project.description.html_safe %>
 	</div>
 	<div id="right-two-thirds">
-		<%= image_tag @project.image_1, :class => "project-image" %>
-		<%= image_tag @project.image_2, :class => "project-image" %>
+		<%= image_tag @project.image_1, :class => "project-image" if @project.image_1.present? %>
+		<%= image_tag @project.image_2, :class => "project-image" if @project.image_2.present? %>
+		<%= image_tag @project.image_3, :class => "project-image" if @project.image_3.present? %>
+		<%= image_tag @project.image_4, :class => "project-image" if @project.image_4.present? %>
 	</div>
 </div>
