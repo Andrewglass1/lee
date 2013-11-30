@@ -18,6 +18,12 @@ class ProjectsController < ApplicationController
 		@project = Project.find_by_slug(params[:slug])
 	end
 
+	def destroy
+		@project = Project.find(params[:id])
+		@project.destroy
+		redirect_to manage_projects_path
+	end
+
 	def update
 		@project = Project.find(params[:id])
 		if @project.update(project_params)

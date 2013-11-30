@@ -1,7 +1,7 @@
 Lee::Application.routes.draw do
   root 'info#index'
 
-  resources :projects, :only => [:index, :new, :create, :update]
+  resources :projects, :only => [:index, :new, :create, :update, :destroy]
   get "projects/:slug" => "projects#show"
   get "projects/:slug/edit" => "projects#edit", as: 'edit_project'
   get "manage-projects" => "projects#manage", as: 'manage_projects'
