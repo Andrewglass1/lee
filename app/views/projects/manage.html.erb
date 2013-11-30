@@ -1,0 +1,19 @@
+<p><span class="title">manage projects</span></p>
+<table>
+  <thead>
+    <tr>
+      <th><p>name</p></th>
+      <th><p>slug</p></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @projects.each do |project| %>
+	    <tr>
+	      <td><p><%= link_to project.name, project_path(project.slug) %></p></td>
+	      <td><p><%= project.slug %></p></td>
+	      <td><p><%= link_to "edit", edit_project_path(project.slug) %></p></td>
+	    </tr>
+	  <% end %>
+  </tbody>
+</table>

@@ -16,19 +16,13 @@ ActiveRecord::Schema.define(version: 20131114010630) do
   create_table "projects", force: true do |t|
     t.string   "image_1"
     t.string   "image_2"
+    t.string   "image_3"
+    t.string   "image_4"
     t.string   "name"
     t.string   "slug"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "videos", force: true do |t|
-    t.string   "link"
-    t.string   "photo"
-    t.string   "caption"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

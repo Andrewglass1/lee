@@ -1,6 +1,9 @@
 class ProjectsController < ApplicationController
 
+	before_filter :redirect_unless_admin, :only => [:new, :manage, :edit]
+
 	def index
+		@projects = Project.all
 	end
 
 	def show
@@ -11,8 +14,21 @@ class ProjectsController < ApplicationController
 		@project = Project.new
 	end
 
+	def edit
+		@project = Project.find_by_slug(params[:slug])
+	end
+
+	def update
+		@project = Project.find(params[:id])
+		if @project.update(project_params)
+			redirect_to manage_projects_path
+		else
+			render "edit"
+		end
+	end
+
 	def create
-  	@project = Project.new(params[:project].permit(:name, :slug, :image_1, :image_2, :description))
+  	@project = Project.new(project_params)
  
 	  if @project.save
 	    redirect_to new_project_path
@@ -22,4 +38,14 @@ class ProjectsController < ApplicationController
 	    flash[:notice] = "There was an issue in adding the project"
 	  end
 	end
+
+	def manage
+		@projects = Project.all
+	end
+
+private
+  def project_params
+    allow = [:name, :slug, :image_1, :image_2, :image_3, :image_4, :description]
+    params.require(:project).permit(allow)
+  end
 end

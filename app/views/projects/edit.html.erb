@@ -1,5 +1,5 @@
-<div id="project-new">
-<p><span class="title">Create a new project</span></p>
+<div id="project-edit">
+<p>Edit a project</p>
 <% if flash[:notice] %><p class="flash"><%= raw(flash[:notice]) %></p><% end %>
 	<%= form_for @project do |f| %>
 	  <p><%= f.label :slug %> <%= f.text_field :slug %></p>
@@ -8,6 +8,6 @@
 	  <p><%= f.label :image_2 %> <%= f.text_field :image_2 %></p>
 	  <p>Description</br>(html markup)</br><%= f.text_area :description, size: "80x20" %></p>
 
-	  <%= link_to 'Create Project', "#", :onclick => "$('#new_project').submit()" %>
+	  <%= link_to 'Update Project', "#", :onclick => "$('.edit_project').submit()" %>
 	<% end %>
 </div>
