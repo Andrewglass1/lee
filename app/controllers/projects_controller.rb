@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
 
 private
   def project_params
-    allow = [:name, :slug, :image_1, :image_2, :image_3, :image_4, :description]
+    allow = [:name, :slug, :image_1, :image_2, :image_3, :image_4, :description, :order]
     params.require(:project).permit(allow)
   end
 end
