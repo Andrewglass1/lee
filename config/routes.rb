@@ -8,6 +8,9 @@ Lee::Application.routes.draw do
 
   resources :info, :only => [:index]
   resources :teaching, :only => [:index]
+  get 'edit-teaching', to: 'teaching#edit', as: "edit_teaching"
+  put 'update-teaching', to: 'teaching#update', as: "update_teaching"
+
   resources :shop, :only => [:index]
 
   resources :admin, :only => [:index]
