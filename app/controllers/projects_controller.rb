@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 	before_filter :redirect_unless_admin, :only => [:new, :manage, :edit, :destroy, :update, :create]
 
 	def index
+		#TODO SORT HERE
 		@projects = Project.all
 	end
 
