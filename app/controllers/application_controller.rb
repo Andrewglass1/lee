@@ -4,8 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def redirect_unless_admin
-	  authenticate_or_request_with_http_basic do |username, password|
-	    username == ENV['LEIGHUSERNAME'] && password == ENV['LEIGHPASSWORD']
-	  end
+  	unless Rails.env == "development"
+		  authenticate_or_request_with_http_basic do |username, password|
+		    username == ENV['LEIGHUSERNAME'] && password == ENV['LEIGHPASSWORD']
+		  end
+		end
   end
 end
