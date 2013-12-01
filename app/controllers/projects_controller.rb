@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-	before_filter :redirect_unless_admin, :only => [:new, :manage, :edit]
+	before_filter :redirect_unless_admin, :only => [:new, :manage, :edit, :destroy]
 
 	def index
 		@projects = Project.all
