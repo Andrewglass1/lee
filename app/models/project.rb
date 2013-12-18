@@ -1,10 +1,20 @@
 class Project < ActiveRecord::Base
 
   def self.in_three_buckets
-    #TODO MAKE BUCKETS WORK
-    bucket_1 = sorted_projects
-    bucket_2 = sorted_projects
-    bucket_3 = sorted_projects
+    #TODO MAKE THIS LESS HACKY
+    bucket_1 = []
+    bucket_2 = []
+    bucket_3 = []
+
+    sorted_projects.each_with_index do | project, index |
+      if index % 3 == 0
+        bucket_1 << project
+      elsif index % 3 == 1
+        bucket_2 << project
+      elsif index % 3 == 2
+        bucket_3 << project
+      end
+    end
 
     [bucket_1, bucket_2, bucket_3]
   end
