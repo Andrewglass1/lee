@@ -3,8 +3,7 @@ class ProjectsController < ApplicationController
 	before_filter :redirect_unless_admin, :only => [:new, :manage, :edit, :destroy, :update, :create]
 
 	def index
-		#TODO SORT HERE
-		@projects = Project.all
+		@project_bucket_1, @project_bucket_2, @project_bucket_3 = Project.in_three_buckets
 	end
 
 	def show
