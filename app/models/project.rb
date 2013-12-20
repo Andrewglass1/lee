@@ -38,12 +38,16 @@ class Project < ActiveRecord::Base
   private
 
   def next_proj
-    p = Project.first(:conditions => ['id > ?', id], :order => 'id DESC')
-    p || Project.first
+    sorted_projects = Project.sorted_projects
+    index = sorted_projects.map(&:id).index(id)
+    p = sorted_projects[index+1]
+    p || sorted_projects.first
   end
 
   def prev_proj
-    Project.first(:conditions => ['id > ?', id], :order => 'id ASC')
-    p || Project.last
+    sorted_projects = Project.sorted_projects
+    index = sorted_projects.map(&:id).index(id)
+    p = sorted_projects[index-1]
+    p || sorted_projects.last
   end
 end
