@@ -1,9 +1,9 @@
 <div id="project-show">
 	<div id="left-third">
 		<p>
-			<span class="next-link"><%= link_to "<<", @project.next_proj_link  %></span>
+			<span class="next-link"><%= link_to "<<", @project.prev_proj_link  %></span>
 			<span class="title"><%= @project.name %></span>
-			<span class="next-link"><%= link_to ">>", @project.prev_proj_link  %></span>
+			<span class="next-link"><%= link_to ">>", @project.next_proj_link  %></span>
 		</p>
 		<%= @project.description.html_safe %>
 	</div>
