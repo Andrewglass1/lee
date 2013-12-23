@@ -20,7 +20,7 @@ class Project < ActiveRecord::Base
   end
 
   def self.sorted_projects
-    @sorted_projects ||= Project.all.sort_by(&:order)
+    Project.all.sort_by(&:order)
   end
 
   def link
