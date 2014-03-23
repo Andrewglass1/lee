@@ -13,6 +13,36 @@
 
 ActiveRecord::Schema.define(version: 20131201033013) do
 
+  create_table "activities", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "activity_assignments", force: true do |t|
+    t.integer  "park_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "parks", force: true do |t|
+    t.string   "name"
+    t.float    "lat"
+    t.float    "long"
+    t.string   "address"
+    t.float    "acres"
+    t.string   "city_park_id"
+    t.string   "borough"
+    t.string   "zip"
+    t.text     "history"
+    t.string   "park_type"
+    t.string   "council_member"
+    t.datetime "attempted_data_update_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "projects", force: true do |t|
     t.string   "image_1"
     t.string   "image_2"
