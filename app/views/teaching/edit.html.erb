@@ -1,8 +1,10 @@
-<p><span class="title">edit teaching content</span></p>
-<%= form_tag("/update-teaching", method: :put, id: "update-teaching-form") do %>
-  <p>Column 1</br>(html markup)</br><%= text_area_tag "teaching_content[column_1]", @teaching_content.column_1, size: "80x10" %></p>
-  <p>Column 2</br>(html markup)</br><%= text_area_tag "teaching_content[column_2]", @teaching_content.column_2, size: "80x10" %></p>
-  <p>Column 3</br>(html markup)</br><%= text_area_tag "teaching_content[column_3]", @teaching_content.column_3, size: "80x10"  %></p>
+<div class="main-content">
+  <p><span class="title">edit teaching content</span></p>
+  <%= form_tag("/update-teaching", method: :put, id: "update-teaching-form") do %>
+    <p>Column 1</br>(html markup)</br><%= text_area_tag "teaching_content[column_1]", @teaching_content.column_1, size: "80x10" %></p>
+    <p>Column 2</br>(html markup)</br><%= text_area_tag "teaching_content[column_2]", @teaching_content.column_2, size: "80x10" %></p>
+    <p>Column 3</br>(html markup)</br><%= text_area_tag "teaching_content[column_3]", @teaching_content.column_3, size: "80x10"  %></p>
 
-  <%= link_to 'Update Teaching Content', "#", :onclick => "$('#update-teaching-form').submit()" %>
-<% end %>
+    <%= link_to 'Update Teaching Content', "#", :onclick => "$('#update-teaching-form').submit()" %>
+  <% end %>
+</div>
