@@ -1,34 +1,11 @@
 <div id="information" class="main-content">
 	<div id="left">
-		<p>
-			Leigh is a graphic designer and educator living and working in New York City. She graduated from Pratt’s MFA program in 2013, where her thesis focused on the relationship between graphic design and poetry.
-		</p>
-		<p>
-			Most times you can find her working at paperwhite studio. But other times she might be working with friend Liz Seibert or the fine folks of intracollaborative.
-		</p>
-		<p>
-			She also teaches advanced typography at<br>
-			St. John’s University in Queens, and writes occasionally.
-		</p>
+		<%= @info_content.column_1.html_safe if @info_content.column_1 %>
 	</div>
 	<div id="middle">
-		<div id="places">
-			<span class="title">Places You Can Find Her</span><br>
-			<span><%= link_to "paperwhite-studio.com", "http://paperwhite-studio.com", :target => "_blank" %></span><br>
-			<span><%= link_to "landl.us", "http://landl.us", :target => "_blank" %> </span><br>
-			<span><%= link_to "intracollaborative.org", "http://intracollaborative.org", :target => "_blank" %></span><br>
-			<span><%= link_to "prattgradcomd.com", "http://prattgradcomd.com", :target => "_blank" %></span><br>
-			<span><%= link_to "makingpolicypublic.net", "http://makingpolicypublic.net", :target => "_blank" %></span><br>
-		</div>
-		<div id="contact">
-			<span class="title">Get In Touch</span><br>
-			<span><%= mail_to "lmignogna@gmail.com", "lmignogna@gmail.com" %></span><br>
-			<span><%= link_to "+1 914 830 7551", "callto:9148307551" %></span><br>
-			<span><%= link_to "@lmignogna", "http://www.twitter.com/lmignogna", :target => "_blank" %></span><br>
-			<p id="resume">Please email for a full resume or cv</p>
-		</div>
+		<%= @info_content.column_2.html_safe if @info_content.column_2 %>
 	</div>
 	<div id="right">
+		<%= @info_content.column_3.html_safe if @info_content.column_3 %>
 	</div>
 </div>
-

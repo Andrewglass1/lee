@@ -7,6 +7,9 @@ Lee::Application.routes.draw do
   get "manage-projects" => "projects#manage", as: 'manage_projects'
 
   resources :info, :only => [:index]
+  get 'edit-info', to: 'info#edit', as: "edit_info"
+  put 'update-info', to: 'info#update', as: "update_info"
+
   resources :teaching, :only => [:index]
   get 'edit-teaching', to: 'teaching#edit', as: "edit_teaching"
   put 'update-teaching', to: 'teaching#update', as: "update_teaching"
