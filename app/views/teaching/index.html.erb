@@ -1,17 +1,21 @@
 <div id="teaching" class="main-content">
-  <% if @teaching_content.column_1.present? %>
-    <div id="left">
-      <%= @teaching_content.column_1.html_safe %>
-    </div>
-    <div id="middle">
-      <%= @teaching_content.column_2.html_safe %>
-    </div>
-    <div id="right">
-      <%= @teaching_content.column_3.html_safe %>
-    </div>
-  <% else %>
-    <div id="centered">
-      <%= image_tag "https://s3.amazonaws.com/leemigs/coming_soon.jpg", :id => "coming-soon" %>
-    </div>
+  <% @teaching_contents.each do |teaching_content| %>
+    <% if teaching_content.column_1.present? %>
+      <div class='teaching-item'>
+        <div id="left">
+          <%= teaching_content.column_1.html_safe %>
+        </div>
+        <div id="middle">
+          <%= teaching_content.column_2.html_safe %>
+        </div>
+        <div id="right">
+          <%= teaching_content.column_3.html_safe %>
+        </div>
+      </div>
+    <% else %>
+      <div id="centered">
+        <%= image_tag "https://s3.amazonaws.com/leemigs/coming_soon.jpg", :id => "coming-soon" %>
+      </div>
+    <% end %>
   <% end %>
 </div>
